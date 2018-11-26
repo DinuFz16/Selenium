@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        body{
+
+            text-align:center;
+        }
+
+    </style>
+    <!-- boot cdn links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- end -->
+
+    <!-- CSS -->
+    <style>
+
+        #bottom
+        {
+            display:none;
+        }
+
+        #display
+        {
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    </style>
+    <!-- end -->
+
+    <!-- Jquery -->
+    <script>
+
+        $(document).ready(function () {
+
+
+            $('#first').click(function () {
+
+                subash();
+
+            });
+
+
+
+            var subash = function () {
+
+                var dinu = $('input[type="checkbox"]:checked');
+
+
+
+                if (dinu.length > 0) {
+
+                    
+                    var kum = '';
+
+                    dinu.each(function () {
+
+                        
+
+                        kum += $('label[for="cb-' + $(this).val() + '"]').text() + "<br>" ;
+
+
+
+                    });
+
+                    
+
+                    $('#bottom').show();
+                    $('#display').html(kum);
+                }
+
+                else {
+                    alert("please select the required skills");
+                }
+            };
+
+          
+
+            $('#last').click(function () {
+
+                
+                alert("Thanks for the conformation");
+            });
+        });
+
+    </script>
+
+    <!--end -->
+
+</head>
+<body>
+
+    <h2>Select the skills you know</h2>
+    <br /><br />
+    <input type="checkbox" value="ja"/> 
+    <label for="cb-ja">Java</label>
+
+    <input type="checkbox" value="jq"/> 
+    <label for="cb-jq">Jquery</label>
+    <br /><br />
+
+    <input type="checkbox" value="js"/> 
+    <label for="cb-js">JavaScript</label>
+
+    <input type="checkbox" value="jo"/> 
+    <label for="cb-jo">Json</label>
+    <br /><br />
+
+    <input type="checkbox" value="ajs"/> 
+    <label for="cb-ajs">AngularJs</label>
+
+    <input type="checkbox" value="ht"/>
+    <label for="cb-ht">Html</label>
+    <br /><br />
+
+    <button id="first" class="btn btn-success">submit</button>
+
+    <div id="bottom">
+        <h3>Are these the selected skills</h3>
+        <div id="display"></div>
+        <br /><br />
+
+        <a href="https://www.youtube.com/watch?v=0lcGNJFSWfY&index=13&list=PL6n9fhu94yhVDV697uvHpavA3K_eWGQap"><button id="last" class="btn btn-danger">Yes!</button></a>
+    </div>
+
+</body>
+</html>

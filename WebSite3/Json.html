@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>    
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>  
+    
+    <style>
+
+        #json1 
+        {
+
+            text-transform : capitalize;
+        }
+
+    </style> 
+    <script>
+    
+        $(document).ready(function () {
+
+            var din = [{
+
+                "FirstName": "dinesh",
+                "lastName": "kumar",
+                "Gender": "Male",
+                "Age": 21
+
+            }, 
+
+{
+            "FirstName": "Naail",
+            "lastName": "Ghani",
+            "Gender": "Male",
+            "Age": 23
+}
+            ];
+
+            var kum = JSON.stringify(din);  // object has be changed to string
+
+            var kum1 = JSON.parse(kum);   // string has bee changed to array
+            
+            var result = '';
+
+          var yok =  $.each(kum1, function (z,sub) {
+
+            
+                result += "FirstName: " + sub.FirstName + '<br/>';
+                result += "LastName: " + sub.lastName + '<br/>';
+                result += "Gender: " + sub.Gender + '<br/>';
+                result += "Age: " + sub.Age + '<br/><br/>';
+
+                
+
+                
+
+          });
+
+          $('button').click(function () {
+
+
+              $('#json1').html(result);
+          });
+            
+           
+
+            });
+
+
+            
+
+
+            
+
+
+        
+    </script>
+</head>
+<body>
+
+    <h3>To get the employee details click here</h3><br />
+    <button>Click_ME</button><br /><br />
+    
+    <div id="json1"></div>
+
+</body>
+</html>

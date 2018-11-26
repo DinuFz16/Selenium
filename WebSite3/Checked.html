@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <!-- boot cdn links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- end -->
+
+    <style>
+
+        #box{
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        input {
+            border:solid;
+
+        }
+
+    </style>
+
+    <!-- Jquery -->
+            
+    <script>
+        $(document).ready(function () {
+
+            
+
+            $('button').click(function () {
+
+                var din = $('input[type="radio"]:checked');
+
+                if(din.length > 0)
+                {
+                    var kum = $('label[for="cb-' + din.val() + '"]');
+
+                    alert("Are you a " + kum.text());
+                }
+                else {
+                    alert("Please enter your details");
+                }
+
+            });
+
+
+        });
+
+    </script>
+
+    <!-- end -->
+
+</head>
+<body>
+    <form id="box">
+
+        <input type="text" placeholder="Enter your Name"/>
+        <br /><br />
+        <input type="text" placeholder="Enter you last name" />
+        <br /><br />
+        <label>Gender:</label><br />
+        <input type="radio" name="cb" value="m" />
+        <label for="cb-Male">Male</label>
+        
+        <input type="radio" name="cb" value="fm"/>
+        <label for="cb-female">Female</label>
+        <br /><br />
+        <input type="email" placeholder="Enter your e-mail" />
+        <br /><br />
+        <button class="btn btn-success">Submit</button>
+
+    </form>
+</body>
+</html>
