@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        #V1{
+            font-size: 10px;
+           width:1px;
+           word-wrap: break-word;
+           white-space:pre-wrap; 
+        }
+
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#box').click(function () {
+
+                var dinu = $('#pic');
+
+                if(dinu.length>0)
+                {
+                    var sub = '';
+
+                    $(dinu).each(function () {
+
+                        sub += $(this).val();
+
+
+                    });
+
+                    $('#pic').fadeIn(sub);
+                }
+                else {
+                    $('#pic').fadeOut();
+                }
+                 
+ 
+            });
+
+            $('#box1').click(function () {
+
+                var dinu1 = $('input[type="checkbox"]:checked');
+
+                if (dinu1.length > 0) {
+                    var sub1 = '';
+
+                    $(dinu1).each(function () {
+
+                        sub1 += $(this).val();
+
+
+                    });
+
+                    $('#pic1').fadeIn(sub1);
+                }
+                else {
+                    $('#pic').fadeOut();
+                }
+
+
+            });
+
+            $('#box2').click(function () {
+
+                var dinu2 = $('input[type="checkbox"]:checked');
+
+                if (dinu2.length > 0) {
+                    var sub2 = '';
+
+                    $(dinu2).each(function () {
+
+                        sub2 += $(this).val();
+
+
+                    });
+
+                    $('#pic2').fadeIn(sub2);
+                }
+                else {
+                    $('#pic').fadeOut();
+                }
+
+
+            });
+           
+        });
+
+
+    </script>
+</head>
+<body>
+    
+   
+
+    <div id="box">
+        <label>2016</label>
+        <input type="checkbox" name="din" value="a" id="p1" /><br /><br />
+    </div>
+
+    <div id="box1">
+        <label for="cb-a">2017</label>
+        <input type="checkbox" name="din" value="b" id="p2" /><br /><br />
+    </div>
+
+    <div id="box2">
+        <label for="cb-a">2018</label>
+        <input type="checkbox" name="din" value="c" id="p3" /><br /><br />
+    </div>
+
+        <div id="pic" style="display:none">
+             <label for="cb-a"><img src="CaptureTIN.PNG" value="a"  /></label>
+        </div>
+
+    <div id="pic1" style="display:none">
+        <label  for="cb-b"><img src="Clinet capture.PNG" value="b" for="cb-b"  /></label>
+    </div>
+
+        <div id="pic2" style="display:none">
+            <label  for="cb-c"> <img src="CaptureHOlD.PNG" value="c" for="cb-c"  /></label>
+        </div>
+
+            <br /><br />
+
+
+
+
+</body>
+</html>
